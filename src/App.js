@@ -92,46 +92,56 @@ function App() {
   ) : error ? (
     <div>loading...</div>
   ) : (
-    <div
-      id="quote-box"
-      className="d-flex flex-column align-items-center container"
-    >
-      <div className="p-5" style={{ backgroundColor: 'white' }}>
-        <div className="quote-text mb-2">
-          <i style={{ color: color }} className="fas fa-quote-left"></i>
-          <span style={{ color: color }} id="text">
-            {' '}
-            {quotes[quoteNumber].quote}
-          </span>
-        </div>
-        <div
-          className="w-100 text-end mb-2"
-          style={{ color: color }}
-          id="author"
-        >
-          {' '}
-          - {quotes[quoteNumber].author}
-        </div>
-        <div className="d-flex justify-content-between">
-          <a href="twitter.com/intent/tweet" id="tweet-quote">
-            <i style={{ color: color }} className="fab fa-twitter"></i>
-          </a>
-          <button
-            id="new-quote"
-            style={{
-              borderRadius: '5px',
-              color: 'white',
-              border: 'none',
-              backgroundColor: color
-            }}
-            onClick={getNewQuoteHandler}
+    <>
+      <div
+        id="quote-box"
+        className="d-flex flex-column align-items-center container mb-2"
+      >
+        <div className="p-5" style={{ backgroundColor: 'white' }}>
+          <div className="quote-text mb-2">
+            <i style={{ color: color }} className="fas fa-quote-left"></i>
+            <span style={{ color: color }} id="text">
+              {' '}
+              {quotes[quoteNumber].quote}
+            </span>
+          </div>
+          <div
+            className="w-100 text-end mb-2"
+            style={{ color: color }}
+            id="author"
           >
             {' '}
-            New Quote{' '}
-          </button>
+            - {quotes[quoteNumber].author}
+          </div>
+          <div className="d-flex justify-content-between">
+            <a href="twitter.com/intent/tweet" id="tweet-quote">
+              <i style={{ color: color }} className="fab fa-twitter"></i>
+            </a>
+            <button
+              id="new-quote"
+              style={{
+                borderRadius: '5px',
+                color: 'white',
+                border: 'none',
+                backgroundColor: color
+              }}
+              onClick={getNewQuoteHandler}
+            >
+              {' '}
+              New Quote{' '}
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+      <div className="d-flex justify-content-center" style={{ color: 'white' }}>
+        <a
+          style={{ color: 'white' }}
+          href="https://github.com/dfdwebsites/build-a-random-quote-machine"
+        >
+          by Iordanis Tselepids
+        </a>
+      </div>
+    </>
   );
 }
 
